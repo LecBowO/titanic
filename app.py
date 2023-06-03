@@ -37,4 +37,11 @@ if st.button("Predict"):
     input_data = pd.DataFrame(input_data, columns=['pclass', 'sex', 'age','fare', 'embarked', 'familysize'])
 
     prdiction = model.predict(input_data)
+    if prdiction == 0:
+        prdiction = "Not Survived"
+    else:
+        prdiction = "Survived"
+
+    st.subheader(prdiction)
+
     
